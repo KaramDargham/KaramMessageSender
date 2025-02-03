@@ -9,6 +9,7 @@ const upload = multer({ dest: "/tmp/uploads/" }); // Use /tmp for serverless env
 
 app.use(express.urlencoded({ extended: true }));
 
+app.get("/", (req, res) => {
  res.send(
 
 
