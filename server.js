@@ -66,7 +66,7 @@ app.post("/upload", upload.single("excelFile"), (req, res) => {
     fs.unlinkSync(filePath);
 
     
-    let htmlLinks = waLinks.map((link,i) => `<div style="display:flex;justify-content:center"><a style="color:#fff;text-decoration:none" href="${link}" target="_blank"><div style="height:150px;width: 250px;border-radius:10px;display:flex;justify-content:center;font-size:20px;align-items:center; background:#6495ed"><h4 style="text-align:center">${names[i]}</h4></div></a></div>`).join("");
+    let htmlLinks = waLinks.map((link,i) => `<div style="display:flex;justify-content:center"><a style="color:#fff;text-decoration:none" href="${link}" target="_blank"><div onclick="this.style.background='purple'" style="height:150px;width: 250px;border-radius:10px;display:flex;justify-content:center;font-size:20px;align-items:center; background:#6495ed"><h4 style="text-align:center">${names[i]}</h4></div></a></div>`).join("");
     
     res.send(`
         <h3 style="display:flex;justify-content:center;background:#6bce83">تم إنشاء الروابط بنجاح</h3>
